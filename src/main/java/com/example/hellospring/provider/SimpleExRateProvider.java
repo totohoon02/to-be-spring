@@ -1,13 +1,14 @@
-package com.example.hellospring.service;
+package com.example.hellospring.provider;
 
 import com.example.hellospring.domain.PaymentRequestDTO;
+import com.example.hellospring.provider.inf.ExRateService;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public class SimpleExRatePaymentService extends PaymentService{
+public class SimpleExRateProvider implements ExRateService {
     @Override
-    BigDecimal getExRate(PaymentRequestDTO requestDTO) throws IOException {
+    public BigDecimal getExRate(PaymentRequestDTO requestDTO) throws IOException {
         if(requestDTO.getCurrency().equals("USD"))
             return BigDecimal.valueOf(1000);
         else

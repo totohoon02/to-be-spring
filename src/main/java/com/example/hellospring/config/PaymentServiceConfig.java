@@ -1,8 +1,8 @@
 package com.example.hellospring.config;
 
 
-import com.example.hellospring.service.PaymentService;
-import com.example.hellospring.service.WebAPiExRatePaymentService;
+import com.example.hellospring.provider.WebAPiExRateProvider;
+import com.example.hellospring.provider.inf.ExRateService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class PaymentServiceConfig {
 
     @Bean
-    public PaymentService paymentService() {
-        return new WebAPiExRatePaymentService();
+    public ExRateService exRateService() {
+        return new WebAPiExRateProvider();
     }
 }
