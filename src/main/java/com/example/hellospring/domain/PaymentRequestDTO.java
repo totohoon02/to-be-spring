@@ -1,11 +1,13 @@
 package com.example.hellospring.domain;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @Getter
+@AllArgsConstructor
 public class PaymentRequestDTO {
     @Schema(description = "주문 ID", example = "100")
     private Long orderId;
