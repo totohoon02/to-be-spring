@@ -2,7 +2,7 @@ package com.example.hellospring.service;
 
 import com.example.hellospring.domain.Payment;
 import com.example.hellospring.domain.PaymentRequestDTO;
-import com.example.hellospring.provider.inf.ExRateService;
+import com.example.hellospring.provider.inf.ExRateProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class PaymentService {
-    private final ExRateService exRateService;
+    private final ExRateProvider exRateService;
 
     public Payment prepare(PaymentRequestDTO requestDTO) throws IOException {
         BigDecimal exRate = exRateService.getExRate(requestDTO);

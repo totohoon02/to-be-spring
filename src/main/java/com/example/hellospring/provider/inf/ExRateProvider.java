@@ -5,6 +5,6 @@ import com.example.hellospring.domain.PaymentRequestDTO;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public interface ExRateService {
+public interface ExRateProvider {
     BigDecimal getExRate(PaymentRequestDTO requestDTO) throws IOException;
 }
